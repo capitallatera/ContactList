@@ -7,13 +7,11 @@ import { filterContact } from '../actions/action'
 
 const HomeContact = () => {
     const dispatch = useDispatch()
-    // const [isOn,setIsOn]=useState(false)
     const [inputValue, setInputValue] = useState('')
     const [showSearch, setShowSearch] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [value, setValue] = useState(null)
     const fetchData = useSelector(state => state.contactReducer.contactData)
-    const searchedData=useSelector(state => state.contactReducer.searched)
  
 
 
@@ -30,8 +28,6 @@ const HomeContact = () => {
         e.preventDefault()
         if (inputValue?true:false){
         dispatch(filterContact(inputValue))
-        // setIsOn(true)
-
         }
     }
     return (

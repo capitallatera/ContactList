@@ -2,9 +2,10 @@ import './App.css';
 import React from 'react'
 import Navbar from './components/element/Navbar'
 import AddContact from './components/AddContact'
-import HomeContact from './components/HomeContact'
+// import HomeContact from './components/HomeContact'
 // import ContactContainer from './Containers/ContactContainer'
 import EditContact from './components/EditContact'
+import HomeSearch from './components/HomeSearch'
 
 import { BrowserRouter as Router, Route,Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
@@ -19,7 +20,7 @@ function App() {
      <Router>
       <Navbar/>
       <Switch>
-        <Route exact path="/"><HomeContact/></Route>
+        <Route exact path="/"><HomeSearch/></Route>
         <Route path="/contact/add"><AddContact/></Route>
         <Route path="/contact/edit/:id"><EditContact/></Route>
       </Switch>
