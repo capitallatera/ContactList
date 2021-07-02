@@ -1,4 +1,5 @@
 
+
 .nav-container{
   display: flex;
   justify-content: space-around;
@@ -62,7 +63,7 @@ input[type=text]{
 
 #table th{
   /* padding-top: 17px;
-  padding-bottom: 17px; */
+  padding-bottom: 17px; Just checking*/
   padding: 17px;
   text-align: left;
   background-color: #04AA6D;
@@ -78,6 +79,76 @@ input[type=text]{
 
 
 
+.confirm-container{
+  
+  position:fixed;
+  border-radius: 12px;
+  top: 20%;
+  left:20%;
+  right: 20%;
+  height: 40%;
+
+}
+.confirm-container{
+background-color: #ffffff;
+padding: 100px;;
+}
+
+@media only screen and (max-width:600px) {
+    .confirm-container{
+      background-color: white;
+
+    }
+}
+
+
+
+
+
+.confirm-text{
+  border: 1px solid grey;
+  padding: 15px 0px 12px;
+  background-color: white;
+  color: grey;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  text-align: center;
+}
+.confirm-button{
+  border: 2px solid none;
+  display: flex;
+  justify-content: center;
+  
+}
+.no-button{
+  width: 100%;
+   padding: 10px;
+   border-bottom-left-radius: 12px;
+   border-style: none;
+   border: 1px solid grey;
+  color: gray;
+
+
+   
+}
+.yes-button{
+  width: 100%;
+  padding: 10px;
+  border-bottom-right-radius: 12px;
+  border-style: none;
+  color: gray;
+  border: 1px solid grey;
+  
+
+}
+.no-button:hover{
+  color:white;
+  background-color: red;
+}
+.yes-button:hover{
+  color:white;
+  background-color: green;
+}
 
 
 

@@ -1,9 +1,12 @@
-import React from 'react'
+import {React,useState} from 'react'
 import Contact from './Contact'
 import { useSelector } from 'react-redux'
+import Modal from './Modal'
 
 
 const HomeContact = () => {
+    const [showModal,setShowModal]=useState(false)
+    const [value,setValue]=useState(null)
     const fetchData = useSelector(state => state.contactReducer.contactData)
     return (
         <div className="table-container">
@@ -17,11 +20,16 @@ const HomeContact = () => {
                 </tr>
                 
                 <tbody>
-                {fetchData.map((data) =>(<Contact key={data.id} data={data}/>) 
+                {fetchData.map((data) =>(<Contact key={data.id} data={data}
+                    modal={<Modal checkingModal={setShowModal} putValue={value}/>}
+                    showingModal={showModal}
+                    checkingModal={setShowModal}
+                    getValue={setValue}
+                />) 
                     )}
                 </tbody>
-
             </table>
+            
         </div>
     )
 }
