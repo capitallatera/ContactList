@@ -22,7 +22,7 @@ const AddContact = () => {
             lastName: lastName,
             phone: phone
         }
-        console.log(new_data)
+        // console.log(new_data)
         dispatch(addContact(new_data))
         history.push("/")
     }

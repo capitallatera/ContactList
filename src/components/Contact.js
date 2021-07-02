@@ -8,7 +8,6 @@ const Contact = (props) => {
     
     const { id, name, lastName, phone } = props.data
     const handleDelete = () => {
-        // dispatch(deleteContact(id))
         props.checkingModal(true)
         props.getValue(id)
 

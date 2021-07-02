@@ -2,19 +2,24 @@ import {
     CREATE_CONTACT,
     GET_CONTACT,
     UPDATE_CONTACT,
-    DELETE_CONTACT
+    DELETE_CONTACT,
+    FILTER_CONTACT
 } from '../constant/constant'
+
 
 const initialState = {
     contactData: [],
-    contact:"Checking Value"
+    contact:"Checking Value",
+    searched:[]
 }
+
 export default function contactReducer(state = initialState, action) {
     switch (action.type) {
         case CREATE_CONTACT:
+            window.localStorage.setItem("data",JSON.stringify([action.data,...state.contactData]))
             return {
                 ...state,
-                contactData: [action.data, ...state.contactData]
+                contactData: [action.data, ...state.contactData],
             }
         case GET_CONTACT:
             let arr=state.contactData.filter((contact)=> contact.id === action.data)
@@ -31,17 +36,27 @@ export default function contactReducer(state = initialState, action) {
             }
         
         case UPDATE_CONTACT:
-            // console.log("Action",action.data)
+            window.localStorage.setItem("data",JSON.stringify(state.contactData.map((contact)=>contact.id===action.data.id?action.data:contact)))
             return{
                 ...state,
                 contactData:state.contactData.map((contact)=>contact.id===action.data.id?action.data:contact)
             }
         
         case DELETE_CONTACT:
+            window.localStorage.setItem("data",JSON.stringify(state.contactData.filter((contact)=>contact.id!==action.data)))
             return{
                 ...state,
                 contactData:state.contactData.filter((contact)=>contact.id!==action.data)
             }
+        
+        case FILTER_CONTACT:
+            console.log("get Value",action.data)            
+    
+            return{
+                ...state,
+                contactData:state.contactData.filter((contact)=>contact.name===action.data?contact:null)
+            }   
+            // contactData:state.contactData.filter((contact)=>contact.name===action.data?contact:state.contactData)
 
         default:
             return state;

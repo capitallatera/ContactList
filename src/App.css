@@ -1,4 +1,6 @@
-
+*{
+  box-sizing: border-box;
+}
 
 .nav-container{
   display: flex;
@@ -48,9 +50,19 @@ input[type=text]{
 .contact-element{
   padding: 4px 10px 4px;
 }
+.super-container{
+  /* border: 2px solid blue; */
+  display: flex;
+  justify-content: center;
+}
+
 .table-container{
  display: flex;
-  justify-content: center;
+flex-direction: column;
+width: 500px;
+/* border: 1px solid red; */
+justify-content: center;
+
 }
 #table {
   margin-top: 30px;
@@ -80,18 +92,19 @@ input[type=text]{
 
 
 .confirm-container{
-  
   position:fixed;
   border-radius: 12px;
-  top: 20%;
+  top: 15%;
   left:20%;
   right: 20%;
   height: 40%;
+  /* border: 1px dashed blue; */
 
 }
 .confirm-container{
 background-color: #ffffff;
 padding: 100px;;
+/* border: 1px solid red; */
 }
 
 @media only screen and (max-width:600px) {
@@ -149,6 +162,9 @@ padding: 100px;;
   color:white;
   background-color: green;
 }
+
+
+
 
 
 
