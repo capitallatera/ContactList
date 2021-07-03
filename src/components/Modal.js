@@ -7,7 +7,9 @@ const Modal = (props) => {
     const dispatch = useDispatch()
     const handleDelete = () => {
         dispatch(deleteContact(props.putValue))
-        props.checkingModal(false)
+        // props.checkingModal(false)
+        props.isOnFun(false)
+
     }
 
     return (
@@ -17,7 +19,7 @@ const Modal = (props) => {
                 <div className="confirm-button" >
                     <button
                         className="no-button"
-                        onClick={() => props.checkingModal(false)}>No</button>
+                        onClick={() => props.isOnFun(false)}>No</button>
                     <button onClick={handleDelete} className="yes-button" >Yes</button>
                 </div>
             </div>

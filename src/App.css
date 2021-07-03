@@ -167,10 +167,31 @@ padding: 100px;;
   padding: 0px 20rem 0px;
 }
 
+.modal-search-container{
+    border: 1px solid grey;
+    margin: 5px 0px 5px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 5px;
+}
 
+.modal-name{
+  /* border: 1px solid red; */
+  margin: 5px;
+  float: left;
+  
+}
 
-
-
+.sub-modal-button{
+  margin: 5px;
+ /* border: 1px solid green; */
+ 
+}
+.modal-phone{
+  margin: 5px;
+  /* border: 1px solid gray; */
+}
 
 
 

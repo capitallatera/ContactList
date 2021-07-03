@@ -10,8 +10,6 @@ const Contact = (props) => {
     const handleDelete = () => {
         props.checkingModal(true)
         props.getValue(id)
-
-
     }
 
     return (

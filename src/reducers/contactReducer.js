@@ -8,10 +8,13 @@ import {
 
 
 const initialState = {
-    contactData: [],
+    contactData: JSON.parse(window.localStorage.getItem("data")),
     contact:"Checking Value",
     searched:[]
 }
+
+
+
 
 export default function contactReducer(state = initialState, action) {
     switch (action.type) {
@@ -56,7 +59,6 @@ export default function contactReducer(state = initialState, action) {
                 ...state,
                 contactData:state.contactData.filter((contact)=>contact.name===action.data?contact:null)
             }   
-            // contactData:state.contactData.filter((contact)=>contact.name===action.data?contact:state.contactData)
 
         default:
             return state;

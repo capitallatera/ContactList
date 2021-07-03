@@ -1,3 +1,4 @@
+// Depricated Component
 import { React, useState, useEffect } from 'react'
 import Contact from './Contact'
 import { useSelector } from 'react-redux'
@@ -30,6 +31,7 @@ const HomeContact = () => {
         dispatch(filterContact(inputValue))
         }
     }
+
     return (
         <div className="super-container">
             <div className="table-container">
@@ -43,6 +45,7 @@ const HomeContact = () => {
                         <button type="submit">search</button>
                 </form>}
                 <table id="table">
+
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
@@ -61,7 +64,6 @@ const HomeContact = () => {
                         )}
                     </tbody>
                 </table>
-
             </div>
         </div>
     )

@@ -10,18 +10,23 @@ const EditContact = () => {
     const [name, setName] = useState('')
     const [lastName, setLastName] = useState('')
     const [phone, setPhoneNo] = useState()
+    const [showMessage,setShowMessage]=useState(false)
     const fetchData = useSelector((state) => state.contactReducer.contact)
     let history=useHistory()
     const handleUpdate = (e) => {
         e.preventDefault()
-        const update_contact=Object.assign(fetchData,{
-            name:name,
-            lastName:lastName,
-            phone:phone, 
-        })
-        // console.log(update_contact)
-        dispatch(updateContact(update_contact))
-        history.push("/")
+        if (phone.length===10){
+            const update_contact = Object.assign(fetchData, {
+                name: name,
+                lastName: lastName,
+                phone: phone,
+            })
+            dispatch(updateContact(update_contact))
+            history.push("/")
+        }
+        else{
+            setShowMessage(true)
+        }
 
     }
 
@@ -40,6 +45,7 @@ const EditContact = () => {
                 <input type="text" placeholder="Enter your name" value={name} onChange={e => setName(e.target.value)} />
                 <input type="text" placeholder="Enter your last name" value={lastName} onChange={e => setLastName(e.target.value)} />
                 <input type="text" placeholder="Enter your phone" value={phone} onChange={e => setPhoneNo(e.target.value)} />
+                {showMessage&&`Length should be 10`}
                 <button className="button" >Update Contact</button>
             </form>
         </div>
